@@ -5,13 +5,13 @@
     {
         // properties
         private $id;
-        public $libelle;
-        public $code_barre;
-        public $prix_achat;
-        public $prix_final;
-        public $prix_offre;
-        public $description;
-        public $category;
+        public $nom_complete;
+        public $email;
+        public $nbr_tele;
+        public $addresse;
+        public $ville;
+        public $password;
+    
 
         public function __construct()
         {
