@@ -5,7 +5,11 @@
     {
         public function index()
         {
-            $this->view('pagesClients/index');
+            $data = [
+                'title' => 'sharePost',
+                'description' => 'lorennnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn'
+            ];
+            $this->view('pagesClients/index',$data);
         }
         public function about()
         {

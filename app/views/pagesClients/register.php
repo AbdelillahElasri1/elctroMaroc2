@@ -20,17 +20,19 @@
       dolores deleniti inventore quaerat mollitia?
     </p> -->
 
-    <form action="" class="mt-6 mb-0 space-y-4 rounded-lg p-8 shadow-2xl">
+    <form action="<?= URLROOT?>/user/register" method="post" class="mt-6 mb-0 space-y-4 rounded-lg p-8 shadow-2xl">
       <p class="text-lg font-medium">Sign in to your account</p>
 
       <div>
-        <label for="email" class="text-sm font-medium">First Name</label>
+        <label for="firstName" class="text-sm font-medium">First Name</label>
 
         <div class="relative mt-1">
           <input
-            type="email"
-            id="email"
-            class="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
+            type="text"
+            id="firstName"
+            name="firstName"
+            class="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm <?php echo (!empty($data['firstName_err'])) ? 'is-invalid' : ''; ?>"
+            value="<?php echo $data['firstName']; ?>"
             placeholder="Enter First Name"
           />
 
@@ -54,13 +56,15 @@
       </div>
 
       <div>
-        <label for="email" class="text-sm font-medium">Last Name</label>
+        <label for="lastName" class="text-sm font-medium">Last Name</label>
 
         <div class="relative mt-1">
           <input
-            type="email"
-            id="email"
-            class="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
+            type="text"
+            name="lastName"
+            id="lastName"
+            class="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm <?php echo (!empty($data['lastName_err'])) ? 'is-invalid' : ''; ?>"
+            value="<?php echo $data['lastName'];?>"
             placeholder="Enter Last Name"
           />
 
@@ -89,8 +93,10 @@
         <div class="relative mt-1">
           <input
             type="email"
+            name="email"
             id="email"
-            class="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
+            class="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm <?php echo (!empty($data['email_err'])) ? 'is-invalid' : ''; ?>"
+            value="<?php echo $data['email'];?>"
             placeholder="Enter email"
           />
 
@@ -119,8 +125,10 @@
         <div class="relative mt-1">
           <input
             type="password"
+            name="password"
             id="password"
-            class="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
+            class="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm <?php echo (!empty($data['password_err'])) ? 'is-invalid' : ''; ?>"
+            value="<?php echo $data['password'];?>"
             placeholder="Enter password"
           />
 
@@ -152,9 +160,10 @@
       
       <button
         type="submit"
+        value="register"
         class="block w-full rounded-lg bg-indigo-600 px-5 py-3 text-sm font-medium text-white"
-      ><a href="<?php echo URLROOT?>/Pages/index">
-        Register</a>
+      >
+        Register
       </button>
 
       <p class="text-center text-sm text-gray-500">
